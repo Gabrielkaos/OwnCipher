@@ -1,0 +1,10 @@
+
+rotate rotors
+get encrypted chars from keyword
+plugs
+exception
+
+weaknesses:
+    spaces cannot be used
+    exception key dependent in previous input
+    static rotors
