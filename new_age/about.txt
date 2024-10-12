@@ -1,11 +1,8 @@
 
 rotate rotors
 get encrypted chars from keyword
-plugs
-exception
 
 weaknesses:
+    same ciphered of letter in ciphertext no matter the position
     spaces cannot be used
-    exception key dependent in previous input
     static rotors
-

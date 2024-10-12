@@ -1,20 +1,13 @@
-from utils import remove_slash_n, gear, use_plugs, hash_characters
+from utils import remove_slash_n, gear, hash_characters
 from constants import characters,len_chars
 
 def enc_idx(a,encrypted_chars):return encrypted_chars.index(a)
 
-def final_decrypt(ciphertext,encrypted_chars,where_to):
+def final_decrypt(ciphertext,encrypted_chars):
     plaintext = ""
     for j,i in enumerate(ciphertext):
-        if where_to is not None:
-            if j in where_to:
-                new_idx = enc_idx(i, encrypted_chars)
-                plaintext += characters[new_idx]
-            else:
-                plaintext+=i
-        else:
-            new_idx = enc_idx(i, encrypted_chars)
-            plaintext += characters[new_idx]
+        new_idx = enc_idx(i, encrypted_chars)
+        plaintext += characters[new_idx]
     return plaintext
 
 def get_info(use_settings):
@@ -51,25 +44,17 @@ def main():
 
     settings_list=remove_slash_n(settings_list)
 
-    plugs = settings_list[3].split(",")
-    try:
-        where_to = [int(i) for i in settings_list[4].split(",")]
-
-        if len(ciphertext) - len(where_to) > 4: where_to = None
-    except IndexError:
-        where_to = None
-    ciphertext = use_plugs(plugs,ciphertext)
 
     encrypted_chars = de_processor(settings_list)
 
-    plaintext=final_decrypt(ciphertext,encrypted_chars,where_to)
+    plaintext=final_decrypt(ciphertext,encrypted_chars)
 
-    plaintext = use_plugs(plugs, plaintext)
 
     print("\nDecrypted Message->"+plaintext)
 
     #delete the pad
     _ = open("pad.txt","w").close()
+
 
 if __name__=="__main__":
     main()
