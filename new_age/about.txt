@@ -8,3 +8,4 @@ weaknesses:
     spaces cannot be used
     exception key dependent in previous input
     static rotors
+
