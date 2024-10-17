@@ -30,7 +30,6 @@ def save(key_5, keylist,no_of_gears,path="pad.txt"):
 
     meon_things3.close()
 
-
 def processor(plaintext,no_of_gears,use_settings,settings):
     if not use_settings:
         key_word = "".join(choices(characters, k=len_chars))
