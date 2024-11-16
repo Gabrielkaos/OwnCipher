@@ -1,0 +1,4 @@
+/.idea
+/.venv
+/new_age/__pycache__
+*.pyc
