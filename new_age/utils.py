@@ -14,8 +14,6 @@ def remove_slash_n(settings):
     return settings1
 
 def gear(key_word, int_key,reverse=False):
-    # if reverse:
-    #     return "".join([characters[(char_idx(i) - int_key) % len_chars] for i in key_word])
 
     previous_key = []
     for i in key_word:
@@ -26,7 +24,6 @@ def gear(key_word, int_key,reverse=False):
         previous_key.append(character)
     return "".join(previous_key)
 
-    # return "".join([characters[(char_idx(i) + int_key) % len_chars] for i in key_word])
 
 def hash_characters(key_word):
     list_char = list(characters)

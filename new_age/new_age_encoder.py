@@ -75,23 +75,11 @@ def main():
 
     use_settings = input("Use settings\na.)true\nb.)false\nEnter:").lower() == "a"
     if not use_settings:
-        # plugs = generate_plugs()
         no_of_gears=int(input("\nEnter how many gears:"))
     else:
-        # plugs = settings1[3].split(",")
         no_of_gears=int(settings1[1])
 
-    # plaintext = use_plugs(plugs,plaintext)
-
     ciphertext, key_,keylist = processor(plaintext, no_of_gears,use_settings,settings1)
-
-    # if '\n' in list(ciphertext):print("HERE1")
-
-    # print(ciphertext)
-
-    #use plugs
-    # ciphertext = use_plugs(plugs,ciphertext)
-    # if '\n' in list(ciphertext):print("HERE2")
 
     if not use_settings:
         is_save = input("Save?\na.)true\nb.)false\nEnter:").lower() == "a"
